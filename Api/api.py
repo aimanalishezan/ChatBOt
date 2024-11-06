@@ -33,17 +33,17 @@ llm=Ollama(model="llama3.2")
 prompt1=ChatPromptTemplate.from_template("Write a story about {topic} with 100 words")
 #prompt2=ChatPromptTemplate.from_template("Write a poem about {topic} for child")
 
-# add_routes(
-#     api,
-#     prompt2|model,
-#     path="/poem"
-# )
 
 add_routes(
     api,
     prompt1|llm,
     path="/story"
 )
+# add_routes(
+#     api,
+#     prompt2|model,
+#     path="/poem"
+# )
 
 if __name__=="__main__":
     uvicorn.run(api,host="localhost",port=8000)
