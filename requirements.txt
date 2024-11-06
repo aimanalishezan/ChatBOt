@@ -6,3 +6,4 @@ streamlit
 langserve
 fastapi
 uvicorn
+sse_starlette
