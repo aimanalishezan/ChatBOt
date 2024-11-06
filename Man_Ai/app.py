@@ -1,4 +1,4 @@
-#from lagchain_
+#from lagchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_community.llms import Ollama
@@ -8,6 +8,11 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
+
+
+
+#add open ai key
+#os.environ["OPENAI_API_KEY"]=os.getenv("OPENAI_API_KEY")
 
 # Verify environment variable
 langchain_api_key = os.getenv("LANGCHAIN_API_KEY")
@@ -28,11 +33,14 @@ prompt = ChatPromptTemplate.from_messages(
 st.title("Aiman's Man.AI")
 input_text = st.text_input("Search the topic you want")
 
-# LLM call
+#llm call for openai 
+#llm=ChatOpenAI(model="gpt-4")
+
+# LLM call for ollam 
 llm = Ollama(model="llama3.2")
 output_parser = StrOutputParser()
 
-# Chain
+# define the  Chain
 chain = prompt | llm | output_parser
 if input_text:
     st.write(chain.invoke({'question': input_text}))
