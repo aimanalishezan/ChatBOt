@@ -12,19 +12,19 @@ load_dotenv()
 os.environ["LANGCHAIN_API_KEY"]=os.getenv("LANGCHAIN_API_KEY")
 os.environ["LANGCHAIN_TRACING_V2"]="true"
 #creating cheat bot
-prompt=ChatPromptTemplate.from_massages(
+prompt=ChatPromptTemplate.from_messages(
     [
         ("system","you are e helpful assistant.please provide response to the user queries"),
         ("user","Question:{question}")
     ]
 )
 #streamlit framework
-st.title("Aiman's\n Man.AI")
+st.title("Aiman's Man.AI")
 input_text=st.text_input("search the topic you want")
 #llm call
 llm=ollama(model="llama3.2")
-output_parser=StrOutputParser
+output_parser=StrOutputParser()
 #chain
 chain=prompt|llm|output_parser
 if input_text:
-    st.write(chain.invoke({'question':input_text}))
+    st.write(chain.invoke({"question":input_text}))

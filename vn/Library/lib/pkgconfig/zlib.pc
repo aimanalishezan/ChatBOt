@@ -1,0 +1,13 @@
+prefix=D:/ChatBOt/vn/Library
+exec_prefix=D:/ChatBOt/vn/Library
+libdir=D:/ChatBOt/vn/Library/lib
+sharedlibdir=D:/ChatBOt/vn/Library/lib
+includedir=D:/ChatBOt/vn/Library/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
