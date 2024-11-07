@@ -36,7 +36,7 @@ prompt1=ChatPromptTemplate.from_template("Write a story about {topic} with 100 w
 
 add_routes(
     api,
-    prompt1|llm,
+    prompt1|llm,  # Pass as dictionary rather than using |
     path="/story"
 )
 # add_routes(
