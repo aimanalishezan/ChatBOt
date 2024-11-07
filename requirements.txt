@@ -12,3 +12,4 @@ pypdf
 faiss-cpu
 wikipedia
 arxiv
+langchainhub
