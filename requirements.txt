@@ -13,3 +13,4 @@ faiss-cpu
 wikipedia
 arxiv
 langchainhub
+
