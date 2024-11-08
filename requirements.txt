@@ -13,4 +13,4 @@ faiss-cpu
 wikipedia
 arxiv
 langchainhub
-
+somepackage
